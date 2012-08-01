@@ -1,0 +1,24 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..\..
+
+DIRNAME=src\modules\MultiSyn
+
+todo: default_target
+
+OBJS = UnitSelection.obj VoiceBase.obj DiphoneUnitVoice.obj VoiceModuleBase.obj DiphoneVoiceModule.obj EST_TargetCost.obj TargetCostRescoring.obj EST_JoinCost.obj EST_JoinCostCache.obj DiphoneBackoff.obj EST_DiphoneCoverage.obj EST_FlatTargetCost.obj
+
+DIRS = inst_tmpl
+
+LOCAL_INCLUDES = /I..\include
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .vcbuildlib
+!include $(TOP)\config\vc_common_make_rules
+
+!include vc_make.depend
+

@@ -1,0 +1,18 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..
+
+DIRNAME=src
+
+todo: default_target
+
+DIRS = arch modules main
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\$(LIB_DIR)\libFestival.lib
+
+ALL = .sub_directories
+!include $(TOP)\config\vc_common_make_rules
+

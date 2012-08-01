@@ -1,0 +1,20 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..\..
+
+DIRNAME=src\modules\UniSyn_diphone
+
+todo: default_target
+
+OBJS = UniSyn_diphone.obj us_diphone_unit.obj us_diphone_index.obj
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .vcbuildlib
+!include $(TOP)\config\vc_common_make_rules
+
+!include vc_make.depend
+

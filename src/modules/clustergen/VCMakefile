@@ -1,0 +1,22 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..\..
+
+DIRNAME=src\modules\clustergen
+
+todo: default_target
+
+OBJS = clustergen.obj mlsa_resynthesis.obj vc.obj simple_mlpg.obj me_mlsa.obj
+
+LOCAL_INCLUDES = /I..\include -DFESTIVAL
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .vcbuildlib
+!include $(TOP)\config\vc_common_make_rules
+
+!include vc_make.depend
+

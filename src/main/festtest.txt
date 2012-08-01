@@ -1,0 +1,1 @@
+(Flinger.sing "../modules/Flinger/Examples/ogi.mid" nil)

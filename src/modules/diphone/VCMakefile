@@ -1,0 +1,22 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..\..
+
+DIRNAME=src\modules\diphone
+
+todo: default_target
+
+OBJS = diphone.obj di_reslpc.obj di_psola.obj di_select.obj di_pitch.obj di_io.obj oc.obj
+
+LOCAL_INCLUDES = /I..\include
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .vcbuildlib
+!include $(TOP)\config\vc_common_make_rules
+
+!include vc_make.depend
+

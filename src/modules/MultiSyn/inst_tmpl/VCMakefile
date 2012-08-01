@@ -1,0 +1,22 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..\..\..
+
+DIRNAME=src\modules\MultiSyn\inst_tmpl
+
+todo: default_target
+
+OBJS = hash_s_itemlistp_t.obj hash_itemp_tcdatap_t.obj list_uttp_t.obj list_itemp_t.obj list_voicemodulep_t.obj list_strlist_t.obj vector_jccp_t.obj list_scorepair_t.obj
+
+LOCAL_INCLUDES = /I..\..\..\..\src\modules\MultiSyn
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .vcbuildlib
+!include $(TOP)\config\vc_common_make_rules
+
+!include vc_make.depend
+

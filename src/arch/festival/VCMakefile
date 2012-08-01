@@ -1,0 +1,20 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..\..
+
+DIRNAME=src\arch\festival
+
+todo: default_target
+
+OBJS = festival.obj Phone.obj utterance.obj features.obj wave.obj wagon_interp.obj linreg.obj audspio.obj server.obj client.obj web.obj tcl.obj wfst.obj ngram.obj viterbi.obj ModuleDescription.obj
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .vcbuildlib
+!include $(TOP)\config\vc_common_make_rules
+
+!include vc_make.depend
+

@@ -1,0 +1,22 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..\..
+
+DIRNAME=src\modules\donovan
+
+todo: default_target
+
+OBJS = makewav.obj load_diphs.obj coeffs.obj excitation.obj pitch.obj durations.obj donovan.obj
+
+LOCAL_INCLUDES = /I..\include
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .vcbuildlib
+!include $(TOP)\config\vc_common_make_rules
+
+!include vc_make.depend
+

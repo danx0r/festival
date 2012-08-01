@@ -1,0 +1,22 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..\..
+
+DIRNAME=src\modules\Intonation
+
+todo: default_target
+
+OBJS = int_aux.obj duffint.obj simple.obj gen_int.obj int_tree.obj
+
+LOCAL_INCLUDES = /I..\include
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .vcbuildlib
+!include $(TOP)\config\vc_common_make_rules
+
+!include vc_make.depend
+

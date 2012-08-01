@@ -1,0 +1,16 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..\..\..\..\..
+
+DIRNAME=src\modules\java\cstr\festival\client
+
+todo: default_target
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\..\..\..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .java .sub_directories
+!include $(TOP)\config\vc_common_make_rules
+

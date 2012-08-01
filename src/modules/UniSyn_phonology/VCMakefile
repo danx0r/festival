@@ -1,0 +1,22 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..\..
+
+DIRNAME=src\modules\UniSyn_phonology
+
+todo: default_target
+
+OBJS = UniSyn_phonology.obj mettree.obj syllabify.obj subword.obj UniSyn_build.obj us_duration.obj unisyn_tilt.obj us_aux.obj
+
+LOCAL_INCLUDES = /I..\include
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .vcbuildlib
+!include $(TOP)\config\vc_common_make_rules
+
+!include vc_make.depend
+

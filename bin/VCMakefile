@@ -1,0 +1,20 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..
+
+DIRNAME=bin
+
+todo: default_target
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\$(LIB_DIR)\libFestival.lib
+
+ALL = .remove_links .link_main .process_scripts text2wave
+!include $(TOP)\config\vc_common_make_rules
+
+# don't make text2wave
+
+text2wave:
+	@echo "no text to wave"

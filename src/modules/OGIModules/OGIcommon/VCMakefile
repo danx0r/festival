@@ -1,0 +1,22 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..\..
+
+DIRNAME=src\modules\OGIcommon
+
+todo: default_target
+
+OBJS = OGI_LPC.obj OGI_file.obj OGI_TimeWarp.obj OGI_Track.obj OGI_WaveChunk.obj OGIcommon.obj OGIduration.obj OGI_Buffer.obj OGIpitch.obj OGIgain.obj OGI_Filter.obj OGI_Math.obj OGI_Vector.obj OGI_Track_file.obj
+
+LOCAL_INCLUDES = /I..\..\..\src\include
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .vcbuildlib
+!include $(TOP)\config\vc_common_make_rules
+
+!include vc_make.depend
+

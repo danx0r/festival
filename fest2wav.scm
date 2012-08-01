@@ -1,0 +1,5 @@
+(voice_ogi_as_diphone)
+(define (do_nothing utt) utt)
+(set! tts_hooks (list utt.synth do_nothing))
+(save_waves_during_tts)
+(tts "c1L.xml" "singing")

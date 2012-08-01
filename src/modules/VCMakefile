@@ -1,0 +1,28 @@
+
+# Makefile for MicroCruft Visual C++
+
+TOP=..\..
+
+DIRNAME=src\modules
+
+todo: default_target
+
+OBJS = init_modules.obj
+
+DIRS = rxp clunits clustergen MultiSyn hts_engine Lexicon base Duration Intonation Text UniSyn donovan parser UniSyn_diphone
+
+LOCAL_INCLUDES = /I.\Database
+
+CFLAGS = $(DEBUGFLAGS) $(OPTFLAGS) $(INCLUDEFLAGS) 
+
+INLIB = ..\..\$(LIB_DIR)\libFestival.lib
+
+ALL = .vcbuildlib
+!include $(TOP)\config\vc_common_make_rules
+
+# Special extra rules for this directory
+
+subtypes.cc : . utilities\find_subtypes.exe
+	@echo "Making subtypes.cc"
+	utilities\find_subtypes $(DIRS) - $(ABSTRACT_TYPES) >subtypes.cc
+
