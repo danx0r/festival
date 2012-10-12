@@ -1,0 +1,3 @@
+(voice_ogi_tll_diphone)
+(save_waves_during_tts)
+(tts "libretto.xml" "libretto")
